@@ -1,9 +1,13 @@
 function solution(numbers) {
-    const stringNumber = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
-
-    stringNumber.forEach((item, index) => {
-        numbers = numbers.split(item).join(String(index));
-    })
-    
-    return Number(numbers);
+    numbers = numbers.replaceAll('one', '1')
+        .replaceAll('two', '2')
+        .replaceAll('three', '3')
+        .replaceAll('four', '4')
+        .replaceAll('five', '5')
+        .replaceAll('six', '6')
+        .replaceAll('seven', '7')
+        .replaceAll('eight', '8')
+        .replaceAll('nine', '9')
+        .replaceAll('zero', '0');
+    return +numbers;
 }
