@@ -1,14 +1,8 @@
 function solution(A, B) {
-    let count = 0;
-
-    const a = A.split("")
-    const b = B.split("")
-
-    while(a.join("") !== b.join("")){
-        a.unshift(a[a.length-1])
-        a.pop()
-        count += 1
-        if(count === a.length) break
+    if (A===B) return 0;
+    for (let i = 0; i < A.length; i++) {
+        A = A.slice(-1) + A.slice(0,-1);
+        if (A === B) return i+1;
     }
-    return count === a.length ? -1 : count;
+    return -1;
 }
